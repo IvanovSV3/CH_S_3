@@ -2,15 +2,18 @@
 Random ser = new Random();
 int N = ser.Next(0,15);
 Console.WriteLine("N = "+N);
+int k = 0;
 
-void PrintInt(int n)
+void PrintInt(int n, int k)
 {
-    if (n >= 0)
+    
+    if (0 <= n)
     {
-       Console.WriteLine("Натуральное число = "+n);
+       Console.WriteLine("Натуральное число = "+ k);
        n = n - 1;
-       PrintInt(n);
+       k = k + 1;
+       PrintInt(n,k);
     }
 }
 
-PrintInt(N);
+PrintInt(N,k);
